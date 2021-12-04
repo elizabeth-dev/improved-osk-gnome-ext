@@ -7,16 +7,9 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const InputSourceManager = imports.ui.status.keyboard;
 
-const A11Y_APPLICATIONS_SCHEMA = "org.gnome.desktop.a11y.applications";
 let _indicator;
 
-let settings = ExtensionUtils.getSettings(
-  "org.gnome.shell.extensions.improvedosk"
-);
-
-let _oskA11yApplicationsSettings = new Gio.Settings({
-  schema_id: A11Y_APPLICATIONS_SCHEMA,
-});
+let settings;
 
 // Indicator
 let OSKIndicator = GObject.registerClass(
@@ -413,6 +406,8 @@ function disable_overrides() {
 }
 
 function enable() {
+  settings = ExtensionUtils.getSettings("org.gnome.shell.extensions.improvedosk");
+
   Main.layoutManager.removeChrome(Main.layoutManager.keyboardBox);
 
   // Set up the indicator in the status area
