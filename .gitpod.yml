@@ -1,0 +1,14 @@
+image: elizabethdev/gitpod:improved-osk-gnome
+
+vscode:
+  extensions:
+    - 'GitHub.copilot'
+    - 'mhutchie.git-graph'
+    - 'esbenp.prettier-vscode'
+    - 'ms-vscode.anycode'
+    - 'ms-vscode.anycode-typescript'
+    - 'eamodio.gitlens'
+    - 'dbaeumer.vscode-eslint'
+    - 'VisualStudioExptTeam.vscodeintellicode'
+    - 'yoavbls.pretty-ts-errors'
+    - 'emeraldwalk.RunOnSave'
